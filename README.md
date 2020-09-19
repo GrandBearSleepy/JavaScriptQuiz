@@ -5,3 +5,5 @@
 ## 6 questions in 60 seconds.
 ## With ranking function.
 ## Record can be stored in local storage.
+
+## Link:https://grandbearsleepy.github.io/JavaScriptQuiz/
