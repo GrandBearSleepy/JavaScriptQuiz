@@ -1,5 +1,5 @@
 # A little quiz app writing by vanila JavaScript, HTML and CSS.
-![quiz](./assets/images/quiz1.png)
+![quiz](https://github.com/GrandBearSleepy/JavaScriptQuiz/blob/master/assets/images/quiz1.PNG)
 ![quiz](./assets/images/quiz2.png)
 
 ## 6 questions in 60 seconds.
