@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <!-- bootstrap container -->
+    <div class="container">
+        <div class="header">
+            <header>
+                <!-- a nvabar include title and count down timer -->
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">JavaScript quiz</a>
+                    <p id="timer"></p>
+                </nav>
+            </header>
+        </div>
+        <section>
+            <div class="row">
+                <!-- left section -->
+                <div class="col-lg-7 col-md-12 col-xs-12 m-1">
+                    <!-- start card with introduction and start button -->
+                    <div class="card" id="start-card">
+                        <div class=" card-body">
+                            <h3 class="card-text mb-5">Would you like join a JavaScript quiz?</h3>
+                            <ul>
+                                <li class="py-1">
+                                    You have 60 seconds to answer 6 question.
+                                </li>
+                                <li class="py-1">
+                                    If your answer is correct, you will get 20 points.
+                                </li>
+                                <li class="py-1">
+                                    If your answer is incorrect, you will lose 3 second time.
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary" id="btn-start">Click to start</button>
+                        </div>
+                    </div>
+                    <!-- question card to display questions -->
+                    <div class="hide" id="question-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-text mb-5" id="question">
+                                </h3>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush" id="btn-list">
+                            <li class="list-group-item">
+                                <button data-id="0" type="button" class="option btn btn-primary">Dark</button>
+                            </li>
+                            <li class="list-group-item">
+                                <button data-id="1" type="button" class="option btn btn-primary">Dark</button>
+                            </li>
+                            <li class="list-group-item">
+                                <button data-id="2" type="button" class="option btn btn-primary">Dark</button>
+                            </li>
+                            <li class="list-group-item">
+                                <button data-id="3" type="button" class="option btn btn-primary">Dark</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- final result card to display final result -->
+                    <div class="hide" id="final-result-card">
+                        <div class="card mb-5">
+                            <div class="card-body" id="final-result">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- submit form to get user's input -->
+                    <div class="hide" id="submit-form">
+                        <label class="mt-3">Your name</label>
+                        <input type="text" class="form-control" id="user-name" required>
+                        <button class="btn btn-primary mt-3" id="btn-submit" type="submit">Submit form</button>
+                    </div>
+                </div>
+                <!-- right section -->
+                <div class="col-lg-3 col-md-12 col-xs-12 m-1">
+                    <!-- display ranking record -->
+                    <div id="ranking-card">
+                        <div class="card">
+                            <div class="card-header">
+                                RANKING
+                            </div>
+                            <ul class="list-group list-group-flush" id="ranking-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- display live result -->
+                    <div class="hide" id="result-card">
+                        <div class="card">
+                            <div class="card-header">
+                                RESULT
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="correct">Correct: 0</li>
+                                <li class="list-group-item" id="incorrect">Increct: 0</li>
+                                <li class="list-group-item" id="answered">Answered: 0</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- next and restart button -->
+            <div class="row">
+                <button class="btn btn-primary mx-auto mt-5 btn-lg px-5 hide" id="btn-next">NEXT</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
