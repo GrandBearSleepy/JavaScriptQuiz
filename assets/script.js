@@ -33,7 +33,7 @@ var answeredNum = 0;
 var secondsLeft = 60;
 var correctAnswer = false;
 //read the records from local storage if not, make new array
-var rankingArray = JSON.parse(localStorage.getItem('records')) || [];
+var rankingArray = JSON.parse(localStorage.getItem("records")) || [];
 
 //set all the questions
 var questions = [
@@ -46,8 +46,7 @@ var questions = [
         answer: 0,
     },
     {
-        question:
-            "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
         option0: "<script href='xxx.js'>",
         option1: "<script name='xxx.js'>",
         option2: "<script src='xxx.js'>",
@@ -89,7 +88,10 @@ var questions = [
 ];
 
 //render ranking card
-renderRanking();
+if (rankingArray.length > 0) {
+    renderRanking();
+}
+
 
 //initialize the question page, get the first random question and start the count down timer.
 function initializeQuestion() {
@@ -213,20 +215,10 @@ function compare(property) {
     }
 }
 
-//render ranking display
-function renderRanking() {
-    rankingListEl.innerHTML = "";
-    for (var i = 0; i < 3; i++) {
-        var rankingList = document.createElement("li");
-        rankingList.classList.add("list-group-item");
-        rankingList.textContent = (i + 1) + ". " + rankingArray[i].userName + " : " + rankingArray[i].userScore;
-        rankingListEl.appendChild(rankingList);
-    }
-}
 
 //store records on local storage
 function storeRecords() {
-    var record = {
+    record = {
         "userName": userNameInputEl.value,
         "userScore": score
     }
@@ -234,11 +226,28 @@ function storeRecords() {
     rankingArray.push(record);
     //sort as reverse order
     rankingArray.sort(compare("userScore"));
+    console.log(rankingArray);
 
     renderRanking();
 
     localStorage.setItem("records", JSON.stringify(rankingArray));
 }
+
+//render ranking display
+function renderRanking() {
+    rankingListEl.innerHTML = "";
+    for (var i = 0; i < rankingArray.length; i++) {
+        if (i < 3) {
+            var rankingList = document.createElement("li");
+            rankingList.classList.add("list-group-item");
+            rankingList.textContent = (i + 1) + ". " + rankingArray[i].userName + " : " + rankingArray[i].userScore;
+            rankingListEl.appendChild(rankingList);
+        }
+        else return;
+    }
+}
+
+
 
 //add event listener on the "next" button
 nextBtnEl.addEventListener("click", function () {
