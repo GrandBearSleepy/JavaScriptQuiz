@@ -218,7 +218,7 @@ function compare(property) {
 
 //store records on local storage
 function storeRecords() {
-    record = {
+    var record = {
         "userName": userNameInputEl.value,
         "userScore": score
     }
