@@ -215,17 +215,6 @@ function compare(property) {
     }
 }
 
-//render ranking display
-function renderRanking() {
-    rankingListEl.innerHTML = "";
-    for (var i = 0; i < 3; i++) {
-        var rankingList = document.createElement("li");
-        rankingList.classList.add("list-group-item");
-        rankingList.textContent = (i + 1) + ". " + rankingArray[i].userName + " : " + rankingArray[i].userScore;
-        rankingListEl.appendChild(rankingList);
-    }
-}
-
 //store records on local storage
 function storeRecords() {
     var record = {
@@ -240,6 +229,17 @@ function storeRecords() {
     renderRanking();
 
     localStorage.setItem("records", JSON.stringify(rankingArray));
+}
+
+//render ranking display
+function renderRanking() {
+    rankingListEl.innerHTML = "";
+    for (var i = 0; i < 3; i++) {
+        var rankingList = document.createElement("li");
+        rankingList.classList.add("list-group-item");
+        rankingList.textContent = (i + 1) + ". " + rankingArray[i].userName + " : " + rankingArray[i].userScore;
+        rankingListEl.appendChild(rankingList);
+    }
 }
 
 //add event listener on the "next" button
