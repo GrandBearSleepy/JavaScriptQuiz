@@ -89,7 +89,9 @@ var questions = [
 ];
 
 //render ranking card
-renderRanking();
+if(rankingArray.length>0){
+    renderRanking();
+}
 
 //initialize the question page, get the first random question and start the count down timer.
 function initializeQuestion() {
